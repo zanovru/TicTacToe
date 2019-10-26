@@ -35,7 +35,7 @@ public class Field {
     }
 
     public boolean checkPoint(Point point) {
-        return checkCoordinate(point.x) && checkCoordinate(point.x);
+        return checkCoordinate(point.x) && checkCoordinate(point.y);
     }
 
     public boolean checkCoordinate(final int coordinate) {
