@@ -34,13 +34,17 @@ public class ConsoleView {
     public boolean move(final Game game) {
         final Field field = game.getField();
         final Figure winner = winnerController.getWinner(field);
-        if (winner != null) {
-            System.out.format("Winner is: %s\n", winner);
+        if (winner != null && winner == Figure.X) {
+            System.out.format("Winner is: %s\n", game.getPlayers()[0].getName());
+            return false;
+        }
+        else if(winner != null && winner == Figure.O) {
+            System.out.format("Winner is: %s\n", game.getPlayers()[1].getName());
             return false;
         }
         final Figure currentFigure = currentMoveController.currentMove(field);
         if (currentFigure == null) {
-            System.out.println("No winner and no moves left!");
+            System.out.println("No winner and no moves left! Game over!");
             return false;
         }
         System.out.format("Please enter move point for: %s\n", currentFigure);
