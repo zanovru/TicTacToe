@@ -67,7 +67,7 @@ public class ConsoleView {
         try {
             return in.nextInt();
         } catch (final InputMismatchException e) {
-            System.out.println("0_0 olololo!!!!!");
+            System.out.println("Please, input an integer number!");
             return askCoordinate(coordinateName);
         }
     }

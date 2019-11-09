@@ -24,9 +24,9 @@ public class CLI {
         final Game gameXO = new Game(players, new Field(), "Tic-Tac-Toe");
 
         final ConsoleView consoleView = new ConsoleView();
-        consoleView.show(gameXO);
-        while(consoleView.move(gameXO)) {
+
+        do {
             consoleView.show(gameXO);
-        }
+        } while(consoleView.move(gameXO));
     }
 }
