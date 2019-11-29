@@ -1,6 +1,9 @@
 package xo.model;
 
-public class Game {
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Game implements Iterable<Player> {
 
     private final Player[] players;
 
@@ -24,5 +27,10 @@ public class Game {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        return Arrays.asList(players).iterator();
     }
 }
